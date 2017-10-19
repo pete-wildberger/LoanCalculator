@@ -13,8 +13,9 @@
 int main(int argc, const char * argv[]) {
 //    initialize variables
     int miy;
-    float Loan, Rate, Years, Balance, Term, Payment;
+    float Loan, Rate, Years, Balance, Term, Payment, totalInterest;
     miy = 12;
+    totalInterest = 0;
 //    input info
     std::cout << "\t\t Loan Calculator \n\n";
     std::cout << "Please enter the loan amount: \n";
@@ -49,7 +50,10 @@ int main(int argc, const char * argv[]) {
         std::cout << std::setw(10) << Principal;
         std::cout << std::setw(10) << Balance << std::endl;
         Balance -= Principal;
+        totalInterest += monthly;
     }
+    std::cout << "---------------------------------------\n";
+    std::cout << "Total Paid: "<< totalInterest + Loan << std::endl;
 //    end program
     return 0;
 }
